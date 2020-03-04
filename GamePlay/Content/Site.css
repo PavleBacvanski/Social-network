@@ -1,0 +1,152 @@
+﻿body {
+    padding-top: 100px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+span.field-validation-error {
+    color: red;
+    font-weight: bold;
+}
+
+.voffset {
+    margin-top:2px;
+}
+.voffset1 {
+    margin-top: 5px;
+}
+.voffset2 {
+    margin-top: 10px;
+}
+.voffset3 {
+    margin-top: 20px;
+}
+.voffset4 {
+    margin-top: 40px;
+}
+.voffset5 {
+    margin-top: 80px;
+}
+
+/* Bootstrap Overrides */
+.navbar-inverse {
+    background-color: #114a9e;
+    border-color: #114a9e;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+        color: #ffffff; 
+}
+
+.navbar-inverse .navbar-brand {
+        color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+        color: #fff;
+        background-color: #0a2f65d6;
+}
+
+body {
+    font-family: Trade Winds, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.42857143;
+    color: #333333;
+    background-color: #fff;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+.form-control {
+    padding: 0px 15px;
+    font-size: 16px;
+    border-radius:6px;
+}
+.btn {
+    /*padding: 6px 20px;
+    font-size: 17px;*/
+    border-radius: 6px;
+}
+.navbar-brand {
+    font-weight: 700;
+}
+
+.alert-info {
+    padding: 7px;
+}
+
+/* Page-level styles */
+.games{
+    list-style: none;
+}
+
+.games > li{
+    position:relative;
+    margin-bottom: 30px;
+}
+
+.games > li .date{
+    background: red;
+    color:white;
+    text-align:center;
+    width: 60px;
+    border-radius: 8px;
+}
+
+.games > li .date .month{
+    text-transform: uppercase;
+    font-size:15px;
+    padding: 2px 6px;
+}
+
+.games > li .date .day{
+    background: #e4dddd;
+    color: #000000;
+    font-size: 20px;
+    padding: 5px 10px;
+}
+
+.games > li .details{
+    position: absolute;
+    top: 0px;
+    left: 70px;
+}
+
+.games > li .details .studio {
+       display:block;
+}
+
+.games > li .details .category{
+    font-size:12px;
+    padding-top: 15px;
+}
+
+.games > li .details .categoryBtn{
+    padding-top:10px;
+}
+
+.dropdown-menu{
+    font-size:14px;
+    padding: 5px 5px;
+    min-width: 190px;
+}

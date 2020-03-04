@@ -1,0 +1,42 @@
+﻿@model GamePlay.ViewModels.HomeViewModel
+
+@{
+    ViewBag.Title = "Atteding";
+}
+
+<h2>Remeber list of games premiere</h2>
+
+<ul class="games voffset3">
+    @foreach (var game in Model.UpcomingGames)
+    {
+        <li>
+            <div class="date">
+                <div class="month">
+                    @game.DateTime.ToString("MMM")
+                </div>
+                <div class="day">
+                    @game.DateTime.ToString("d ")
+                </div>
+            </div>
+            <div class="details">
+                <span class="studio">
+                    @game.Studio.Name
+                @if (Model.ShowActions)
+                {
+                    <button class="btn btn-link btn-sm js-toggle-follow" data-user-id="@game.StudioId">Follow</button>
+                }
+                </span>
+                <div class="categoryBtn">
+                    <span class="category">
+                        @game.Category.Name
+                    </span>
+                    @if (Model.ShowActions)
+                    {
+                        <button data-game-id="@game.Id" class="btn btn-default btn-sm pull-right js-toggle-attendece">Remember?</button>
+                    }
+                </div>
+            </div>
+        </li>
+    }
+</ul>
+
