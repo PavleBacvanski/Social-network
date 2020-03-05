@@ -23,6 +23,8 @@ namespace GamePlay.Models
         [Required]
         public byte CategoryID { get; set; }
 
+        public bool IsDeleted { get; set; }
+
     }
 
 }

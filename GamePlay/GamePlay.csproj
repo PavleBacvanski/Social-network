@@ -178,11 +178,12 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\FollowingController.cs" />
+    <Compile Include="Controllers\Api\GameController.cs" />
+    <Compile Include="Controllers\Api\FollowingController.cs" />
     <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\UserGameController.cs" />
+    <Compile Include="Controllers\Api\UserGameController.cs" />
     <Compile Include="DTO\FollowingDTO.cs" />
     <Compile Include="DTO\UserGameDTO.cs" />
     <Compile Include="Global.asax.cs">
@@ -228,6 +229,10 @@
     <Compile Include="Migrations\202002292016180_AddFollowers.Designer.cs">
       <DependentUpon>202002292016180_AddFollowers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003051545451_IsDeletedToGame.cs" />
+    <Compile Include="Migrations\202003051545451_IsDeletedToGame.Designer.cs">
+      <DependentUpon>202003051545451_IsDeletedToGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Follow.cs" />
@@ -252,6 +257,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -299,8 +305,9 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Game\Create.cshtml" />
+    <Content Include="Views\Game\GameForm.cshtml" />
     <Content Include="Views\Game\Attending.cshtml" />
+    <Content Include="Views\Game\Mine.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -348,6 +355,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002292016180_AddFollowers.resx">
       <DependentUpon>202002292016180_AddFollowers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003051545451_IsDeletedToGame.resx">
+      <DependentUpon>202003051545451_IsDeletedToGame.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -21,19 +21,23 @@
             <div class="details">
                 <span class="studio">
                     @game.Studio.Name
-                @if (Model.ShowActions)
+                    @if(game.IsDeleted)
+                    {
+                        <span class="label label-warning">Canceled</span>
+                    }
+                @*@if (Model.ShowActions)
                 {
                     <button class="btn btn-link btn-sm js-toggle-follow" data-user-id="@game.StudioId">Follow</button>
-                }
+                }*@
                 </span>
                 <div class="categoryBtn">
                     <span class="category">
                         @game.Category.Name
                     </span>
-                    @if (Model.ShowActions)
+                    @*@if (Model.ShowActions)
                     {
                         <button data-game-id="@game.Id" class="btn btn-default btn-sm pull-right js-toggle-attendece">Remember?</button>
-                    }
+                    }*@
                 </div>
             </div>
         </li>

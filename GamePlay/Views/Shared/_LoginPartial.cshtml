@@ -12,11 +12,12 @@
                 @User.Identity.GetUserName()
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="@Url.Action("Attending", "Game")">Remembered Games</a><br /> 
+                <a class="dropdown-item" href="@Url.Action("Mine", "Game")">My upcoming games</a><br />
+                <a class="dropdown-item" href="@Url.Action("Attending", "Game")">Remembered Games</a><br />
                 <a class="dropdown-item" href="#">Following Game Studios</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
-        </div>
+            </div>
         </li>
     </ul>
     }

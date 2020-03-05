@@ -87,7 +87,12 @@
                         button.removeClass("btn-default").addClass("btn-info").text("Remembered");
                     })
                     .fail(function () {
-                        alert("Already Remember!");
+                        bootbox.alert({
+                            size: "small",
+                            title: "Information",
+                            message: "Already remembered!",
+                            callback: function () { /* your callback code */ }
+                        });
                     });
             });
 
@@ -98,7 +103,12 @@
                             button.text("Following");
                         })
                         .fail(function () {
-                            alert("Already following!");
+                            bootbox.alert({
+                                size: "small",
+                                title: "Information",
+                                message: "Already follow this studio!",
+                                callback: function () { /* your callback code */ }
+                        });
                         })
                 });
             });

@@ -20,7 +20,7 @@ namespace GamePlay.Controllers
         {
             var games = context.Games.Include(g => g.Studio)
                 .Include(g => g.Category)
-                .Where(g => g.DateTime > DateTime.Now);
+                .Where(g => g.DateTime > DateTime.Now && !g.IsDeleted);
 
             var relesedGames = context.Games.Include(g => g.Studio)
                             .Include(g => g.Category)

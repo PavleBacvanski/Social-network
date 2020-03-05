@@ -1,0 +1,80 @@
+﻿@model IEnumerable<GamePlay.Models.Game>
+@{
+    ViewBag.Title = "Mine";
+}
+
+<h2>My Upcoming games</h2>
+
+<ul class="games voffset4">
+    @foreach (var game in Model)
+    {
+        <li>
+            <div class="date">
+                <div class="month">
+                    @game.DateTime.ToString("MMM")
+                </div>
+                <div class="day">
+                    @game.DateTime.ToString("d ")
+                </div>
+            </div>
+            <div class="details">
+                <span class="studio">
+                    @game.Desc
+                </span>
+                <span class="category">
+                    @game.Category.Name
+                </span>
+                <div class="actions">
+                    <a href="@Url.Action("Edit", "Game", new { id = game.Id})">Edit</a> |
+                    <a href="#" class="js-delete-game" data-game-id="@game.Id">Delete</a>       
+                </div>
+            </div>
+        </li>
+    }
+</ul>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $(".js-delete-game").click(function (e) {
+                var link = $(e.target);
+
+                bootbox.dialog({
+                    title: 'Confirm',
+                    message: '<p>Are you sure you want to delete this game?</p>',
+                    size: 'small',
+                    onEscape: true,
+                    backdrop: true,
+                    buttons: {
+                        no: {
+                            label: 'No',
+                            className: 'btn-default',
+                            callback: function () {
+                                bootbox.hideAll();
+                            }
+                        },
+                        yes: {
+                            label: 'yes',
+                            className: 'btn-danger',
+                            callback: function () {
+                                $.ajax({
+                                    url: "/api/game/" + link.attr("data-game-id"),
+                                    method: "DELETE"
+                                })
+                                    .done(function () {
+                                        link.parents("li").fadeOut(function () {
+                                            $(this).remove();
+                                        });
+                                    })
+                                    .fail(function () {
+                                        alert("Failed!");
+                                    });
+                            }
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+}

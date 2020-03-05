@@ -150,3 +150,18 @@ body {
     padding: 5px 5px;
     min-width: 190px;
 }
+
+.games > li .actions{
+    font-size:14px;
+    display:none;
+}
+
+.games > li:hover .actions{
+    display:block;
+}
+
+.label-warning {
+    background-color: #f0ad4e;
+    font-weight: 100;
+    font-size: inherit;
+}
