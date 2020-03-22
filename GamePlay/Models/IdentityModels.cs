@@ -18,10 +18,14 @@ namespace GamePlay.Models
 
         public ICollection<Follow> Followers { get; set; }
         public ICollection<Follow> Followees { get; set; }
+        public ICollection<UserNotification> UserNotifications { get; set; }
+
+
         public ApplicationUser()
         {
             Followers = new Collection<Follow>();
             Followees = new Collection<Follow>();
+            UserNotifications = new Collection<UserNotification>();
         }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
@@ -30,6 +34,13 @@ namespace GamePlay.Models
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Add custom user claims here
             return userIdentity;
+        }
+
+        public void Notify(Notification notification)
+        {
+            var userNotification = new UserNotification(this, notification);
+          
+            UserNotifications.Add(userNotification);
         }
     }
 
@@ -40,6 +51,8 @@ namespace GamePlay.Models
         public DbSet<Category> Categories { get; set; }
         public DbSet<UserGame> UserGames { get; set; }
         public DbSet<Follow> Follows { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
+        public DbSet<UserNotification> UserNotifications { get; set; }
 
 
         public ApplicationDbContext()
@@ -57,7 +70,7 @@ namespace GamePlay.Models
         {
             modelBuilder.Entity<UserGame>()
                 .HasRequired(u => u.Game)
-                .WithMany()
+                .WithMany(g => g.UserGames)
                 .WillCascadeOnDelete(false);
 
             //Followers
@@ -71,6 +84,10 @@ namespace GamePlay.Models
                 .WithRequired(f => f.Follower)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<UserNotification>()
+                .HasRequired(n => n.User)
+                .WithMany(u => u.UserNotifications)
+                .WillCascadeOnDelete(false);
 
             base.OnModelCreating(modelBuilder);
         }

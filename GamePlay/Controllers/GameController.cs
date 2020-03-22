@@ -50,10 +50,12 @@ namespace GamePlay.Controllers
             }
 
             var userId = User.Identity.GetUserId();
-            var game = context.Games.Single(g => g.Id == viewModel.Id && g.StudioId == userId);
-            game.Desc = viewModel.Desc;
-            game.DateTime = viewModel.GetDataTime();
-            game.CategoryID = viewModel.Category;
+
+            var game = context.Games
+                .Include(g => g.UserGames.Select(a => a.AppUser))
+                .Single(g => g.Id == viewModel.Id && g.StudioId == userId);
+
+            game.Mofigy(viewModel.GetDataTime(), viewModel.Desc, viewModel.Category);
 
             context.SaveChanges();
 

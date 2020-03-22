@@ -241,3 +241,4 @@ C:\Users\Aorus Pro\Documents\GitHub\Social-network\GamePlay\obj\Debug\GamePlay.c
 C:\Users\Aorus Pro\Documents\GitHub\Social-network\GamePlay\obj\Debug\GamePlay.dll
 C:\Users\Aorus Pro\Documents\GitHub\Social-network\GamePlay\obj\Debug\GamePlay.pdb
 C:\Users\Aorus Pro\Documents\GitHub\Social-network\GamePlay\obj\Debug\GamePlay.Migrations.IsDeletedToGame.resources
+C:\Users\Aorus Pro\Documents\GitHub\Social-network\GamePlay\obj\Debug\GamePlay.Migrations.AddNotification.resources

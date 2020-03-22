@@ -34,6 +34,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,6 +44,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
@@ -233,6 +235,10 @@
     <Compile Include="Migrations\202003051545451_IsDeletedToGame.Designer.cs">
       <DependentUpon>202003051545451_IsDeletedToGame.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003221911359_AddNotification.cs" />
+    <Compile Include="Migrations\202003221911359_AddNotification.Designer.cs">
+      <DependentUpon>202003221911359_AddNotification.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Follow.cs" />
@@ -240,7 +246,10 @@
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Notification.cs" />
+    <Compile Include="Models\NotificationType.cs" />
     <Compile Include="Models\UserGame.cs" />
+    <Compile Include="Models\UserNotification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\GameFormViewModel.cs" />
@@ -358,6 +367,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003051545451_IsDeletedToGame.resx">
       <DependentUpon>202003051545451_IsDeletedToGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003221911359_AddNotification.resx">
+      <DependentUpon>202003221911359_AddNotification.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
